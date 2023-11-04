@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'; // Import BrowserRouter
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ArtisanProfile from './Components/ArtisanProfile';
+import ProductListing from './Components/ProductListing';
+import NavigationBar from './Components/NavigationBar';
+import Register from './Components/Register';
+import Advantages from './Components/Advantages';
+import HIW from './Components/HIW';
+import artisanProfileData from './Data';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+      <div>
+        <NavigationBar />
+        <Switch>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/advantages">
+            <Advantages />
+          </Route>
+          <Route path="/how-it-works">
+            <HIW />
+          </Route>
+          <Route path="/">
+            <ArtisanProfile artisan={artisanProfileData} />
+            <ProductListing products={artisanProfileData.products} />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
