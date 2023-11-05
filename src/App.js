@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ArtisanProfile from './Components/ArtisanProfile';
 import ProductListing from './Components/ProductListing';
 import NavigationBar from './Components/NavigationBar';
-import Home from './Components/Home';
-import Advantages from './Components/Advantages';
 import HIW from './Components/HIW';
-import artisanProfileData from './Data';
+import Advantages from './Components/Advantages';
+import Home from './Components/Home';
+import artisanProfileData from './Components/Data';
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
     </Router>
   );
 }
-
 function Register() {
   return (
     <div>
@@ -33,7 +32,6 @@ function Register() {
     </div>
   );
 }
-
 export default App;
 
 
