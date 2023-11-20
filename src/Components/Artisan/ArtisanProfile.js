@@ -2,7 +2,6 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import artisanProfileData from '../Data';
 function ArtisanProfile() {
-
      // Access the data for the artisan
 const artisan = artisanProfileData ;
 
