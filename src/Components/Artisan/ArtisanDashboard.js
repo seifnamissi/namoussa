@@ -1,13 +1,27 @@
 import React from 'react';
-import ProductListing from './ProductListing';
-import Order from './Order';
+import { Link } from 'react-router-dom';
+import ArtisanProfile from './ArtisanProfile'; // Import your ArtisanProfile component
+import ProductListing from './ProductListing'; // Import your ProductListing component
 
-const ArtisanDashboard = () => {
+const ArtisanDashboard = ({ artisan, products }) => {
   return (
     <div>
-      <h1>Artisan Dashboard</h1>
-      <ProductListing />
-      {/* Add more artisan-specific components as needed */}
+      <h2> {artisan.name}!Welcome to Your Dashboard as an Artisan</h2>
+
+      {/* Artisan Profile Section */}
+      <ArtisanProfile artisan={artisan} />
+
+      {/* Product Listing Section */}
+      <ProductListing products={products} />
+
+      {/* Add more sections as needed */}
+      
+      {/* Navigation or Actions */}
+      <div>
+        <Link to="/edit-profile">Edit Profile</Link>
+        <Link to="/add-product">Add Product</Link>
+        {/* Add more navigation links or actions */}
+      </div>
     </div>
   );
 };

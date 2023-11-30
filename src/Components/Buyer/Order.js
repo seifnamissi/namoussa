@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-
-const Order = () => {
-  const [quantity, setQuantity] = useState(0);
-
-  const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
-  };
-
-  const handlePlaceOrder = () => {
-    // Implement order placement logic
-    console.log(`Placing order for ${quantity} items.`);
-  };
+import React from 'react';
+const Order = ({ orderDetails }) => {
+  const { orderedProducts, totalPrice, deliveryAddress, paymentMethod, orderDate } = orderDetails;
 
   return (
     <div>
-      <h2>Place an Order</h2>
-      <label>
-        Quantity:
-        <input type="number" value={quantity} onChange={handleQuantityChange} />
-      </label>
-      <button onClick={handlePlaceOrder}>Place Order</button>
+      <h2>Your Order</h2>
+      <p>Order Date: {orderDate}</p>
+      <ul>
+        {orderedProducts.map((product) => (
+          <li key={product.id}>
+            <h3>{product.name}</h3>
+            <p>Quantity: {product.quantity}</p>
+            <p>Price: dt{product.price}</p>
+          </li>
+        ))}
+      </ul>
+
+      <h3>Total Price: ${totalPrice}</h3>
+      <h3>Delivery Address: {deliveryAddress}</h3>
+      <h3>Payment Method: {paymentMethod}</h3>
+
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './Components/Both/NavigationBar';
@@ -6,30 +6,30 @@ import HIW from './Components/HIW';
 import Advantages from './Components/Advantages';
 import Home from './Components/Home';
 import Register from './Components/Both/Register';
-import Login from './Components/Both/Login';  
+import Login from './Components/Both/Login';
+import ArtisanDashboard from './Components/Artisan/ArtisanDashboard';  // Import your ArtisanDashboard component
 
 function App() {
   const appStyle = {
-    backgroundColor: 'beige', // Set your desired background color
-    minHeight: '100%', // Ensures the background color covers the entire viewport height
+    backgroundColor: 'beige',
+    minHeight: '100%',
   };
+
   return (
-    <Router style={appStyle}>
-      <div>
+    <div style={appStyle}>
+      <Router>
         <NavigationBar />
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/advantages" element={<Advantages />} />
           <Route path="/how-it-works" element={<HIW />} />
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/dashboard" element={<ArtisanDashboard />} />
         </Routes>
-      </div>
-   </Router>
+      </Router>
+    </div>
   );
 }
 
 export default App;
-
-

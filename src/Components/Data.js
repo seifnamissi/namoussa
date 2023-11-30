@@ -21,9 +21,9 @@ const artisanData = {
       description: "One-of-a-kind jewelry pieces that stand out.",
       price: 70.00,
       image: jewelry,  // Use the imported image variable
-    },
+    }
     // Add more products as needed
-  ],
+  ]
 };
 
 export default artisanData;
@@ -37,3 +37,15 @@ const buyerData = {
 };
 
 export { buyerData };
+const mockOrderDetails = {
+  orderedProducts: [
+    { id: 1, name: 'Product 1', quantity: 2, price: 20 },
+    // Add more products as needed
+  ],
+  totalPrice: 40,
+  deliveryAddress: '123 Main St, Cityville',
+  paymentInfo: '**** **** **** 1234',
+  orderDate: '2023-11-30',
+};
+
+export { mockOrderDetails };

@@ -6,18 +6,19 @@ import logo from "../images/logo.jpg";
 function Home() {
   const logoStyle = {
     marginLeft: "55%",
-    marginTop: "-35%",
-   padding:"1px" // Adjust the height as needed
+    marginTop: "-29%",
+   padding:"1px" ,// Adjust the height as needed
+  marginBottom:"50px"
+  
   };
 
-  const buttonStyle = { 
-    background: "lightgray", 
-    border:"3px em solid",
-    borderColor:" #3cb18e",
-    cursor: "pointer", 
-    paddingLeft: "30px", 
-    paddingRight: "30px", 
-    marginTop: "60px",
+  const buttonStyle = {
+    background: '#34bd78',
+    color: 'white',
+    padding: '15px',
+    border: 'none',
+    borderRadius: '20px',
+    cursor: 'pointer',
   };
 
   return (
@@ -27,7 +28,7 @@ function Home() {
       <h1>Buy and sell Tunisian Products <br /> without leaving your home.</h1>
       <br />
       <p>The only app that allows you to make money by selling your<br />Tunisian products online and also makes it easy for tourists<br />and customers to buy them</p>
-     
+      <br />
       <Link to="/register">
         <button style={buttonStyle}>Register</button>
       </Link>

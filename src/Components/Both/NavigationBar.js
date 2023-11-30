@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";  // Change to NavLink
+
 import logo1 from "../../images/logo1.jpg";  // Adjust the import path
 
 function NavigationBar() {
@@ -13,46 +14,43 @@ function NavigationBar() {
         padding: "25px",
         margin: "0px"
     };
+    
     const LogoStyle = {
         marginTop: "-5px",
-        marginLeft:"50px",
-        height:"145px",
-     
-
+        marginLeft: "50px",
+        height: "145px",
     };
-  
+
     return (
         <>
             <Navbar bg="white" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <div style={LogoStyle}>
+                    {/* Use NavLink instead of Link */}
+                    <NavLink to="/" style={LogoStyle}>
                         <img
                             src={logo1}
                             width="200"
                             height="158"
                             alt="Logo"
                         />
-                        </div>
-                    </Navbar.Brand>
+                    </NavLink>
 
                     <Nav style={{
                         justifyContent: "flex-end",
                         marginTop: "90px"
                     }}>
                         <Nav.Link>
-                            <Link to="/" style={linkStyle}> Home </Link>
+                            <NavLink to="/" style={linkStyle}> Home </NavLink>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link to="/register" style={linkStyle}>Register</Link>
+                            <NavLink to="/register" style={linkStyle}>Register</NavLink>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link to="/advantages" style={linkStyle}>Advantages</Link>
+                            <NavLink to="/advantages" style={linkStyle}>Advantages</NavLink>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link to="/how-it-works" style={linkStyle}>HIW</Link>
+                            <NavLink to="/how-it-works" style={linkStyle}>HIW</NavLink>
                         </Nav.Link>
-                        
                     </Nav>
                 </Container>
             </Navbar>
